@@ -1,4 +1,4 @@
-# KM-Academy Wordpress plugin
+# KM-Academy WordPress plugin
 
 ## What is KM-Academy
 KM-Academy enables publishing courses and training events on WordPress websites.
