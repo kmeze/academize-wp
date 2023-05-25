@@ -13,3 +13,4 @@ The plugin installs the following post types and taxonomies:
 
 ## Build plugin from scratch
 ``dotnet build && vi -c ":set nobomb" -c ":wq" obj/Rhetos/Source/WordPress/KMAC/KMAC.php``
+``ln -s ~/Dev/km-academy/obj/Rhetos/Source/WordPress/KMAC/ ~/Dev/wordpress/wp-content/plugins/KMAC``
