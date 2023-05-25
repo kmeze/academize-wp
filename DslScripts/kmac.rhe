@@ -1,0 +1,21 @@
+WPPlugin KMAC
+{
+    // Plugin header
+    Name "Academy Wordpress plugin";
+
+    // Custom post types
+    PostType Courses Course
+    {
+        Taxonomy KMAC.Subjects;
+    }
+
+    PostType Events Event
+    {
+        Taxonomy KMAC.EventTypes;
+    }
+
+    // Custom taxonomies
+    Taxonomy Subjects Subject;
+
+    Taxonomy EventTypes EventType;
+}
