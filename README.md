@@ -5,6 +5,11 @@
 AcademizeWP is a free and open-source WordPress plugin that enables publishing courses and training events on any
 WordPress website.
 
+## Features
+* Create and manage courses
+* Categorize course by one or more subject
+* Browse courses by subject using Subjects List block
+
 ## Post Types and Taxonomies
 
 The plugin installs the following post types and taxonomies:
