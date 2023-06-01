@@ -1,7 +1,7 @@
 WPPlugin ACWP
 {
     // Plugin header
-    Name "Academy Wordpress plugin";
+    Name "AcademizeWP";
 
     // Custom post types
     PostType Courses Course
