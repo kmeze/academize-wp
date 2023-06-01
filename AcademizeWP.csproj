@@ -17,4 +17,13 @@
     <ProjectReference Include="..\WP-DSL\KMeze.Dsl.Php.Wp\KMeze.Dsl.Php.Wp.csproj" />
   </ItemGroup>
 
+<ItemGroup>
+    <WPPlugins Include="$(BaseIntermediateOutputPath)\Rhetos\Source\WordPress\**" />
+</ItemGroup>
+
+<Target Name="CopyPluginsToBuildDirectory" AfterTargets="AfterBuild">
+    <RemoveDir Directories="$(ProjectDir)\Build" />
+    <Copy SourceFiles="@(WPPlugins)" DestinationFolder="$(ProjectDir)\Build\%(RecursiveDir)" ContinueOnError="false" />
+</Target>
+
 </Project>
