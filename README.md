@@ -1,8 +1,8 @@
-# KM-Academy WordPress plugin
+# AcademizeWP WordPress plugin
 
-## What is KM-Academy
+## What is AcademizeWP
 
-KM-Academy is a free and open-source WordPress plugin that enables publishing courses and training events on any
+AcademizeWP is a free and open-source WordPress plugin that enables publishing courses and training events on any
 WordPress website.
 
 ## Post Types and Taxonomies
@@ -22,6 +22,6 @@ The plugin installs the following blocks:
 
 ## Build plugin from scratch
 
-``dotnet build && vi -c ":set nobomb" -c ":wq" obj/Rhetos/Source/WordPress/KMAC/KMAC.php``
+``dotnet build && vi -c ":set nobomb" -c ":wq" obj/Rhetos/Source/WordPress/acwp/acwp.php``
 
-``ln -s ~/Dev/km-academy/obj/Rhetos/Source/WordPress/KMAC/ ~/Dev/wordpress/wp-content/plugins/KMAC``
+``ln -s ~/Dev/AcademizeWP/obj/Rhetos/Source/WordPress/acwp/ ~/Dev/wordpress/wp-content/plugins/acwp``

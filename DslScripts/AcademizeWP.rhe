@@ -1,17 +1,22 @@
-WPPlugin KMAC
+WPPlugin ACWP
 {
     // Plugin header
-    Name "Academy Wordpress plugin";
+    Name        "AcademizeWP";
+    Description "Publish courses and training events on WordPress websites.";
+    PluginURI   "https://github.com/kmeze/AcademizeWP";
+    Version     "1.0.0";
+    Author      "Krešimir Meze";
+    AuthorURI   "https://github.com/kmeze";
 
     // Custom post types
     PostType Courses Course
     {
-        Taxonomy KMAC.Subjects;
+        Taxonomy ACWP.Subjects;
     }
 
     PostType Events Event
     {
-        Taxonomy KMAC.EventTypes;
+        Taxonomy ACWP.EventTypes;
     }
 
     // Custom taxonomies
@@ -20,12 +25,12 @@ WPPlugin KMAC
     Taxonomy EventTypes EventType;
 
     // Blocks
-    ActionHook 'init' KMAC.RegisterSubjectListBlock;
+    ActionHook 'init' ACWP.RegisterSubjectListBlock;
     Callback RegisterSubjectListBlock "
         $script = ""((blocks, blockEditor, element) => {
             const el = element.createElement;
             const useBlockProps = blockEditor.useBlockProps;
-            blocks.registerBlockType('kmac/subjects', {
+            blocks.registerBlockType('acwp/subjects', {
                 edit: (props) => {
                     var blockProps = useBlockProps();
                     return el( 'div', blockProps, 'Subjects list' )
@@ -34,20 +39,20 @@ WPPlugin KMAC
             });
         })(window.wp.blocks, window.wp.blockEditor, window.wp.element);"";
 
-        wp_register_script( 'kmac-subjects', '' );
-        wp_add_inline_script( 'kmac-subjects', $script );
+        wp_register_script( 'acwp-subjects', '' );
+        wp_add_inline_script( 'acwp-subjects', $script );
 
-        register_block_type( 'kmac/subjects', array(
+        register_block_type( 'acwp/subjects', array(
             '$schema'         => 'https://schemas.wp.org/trunk/block.json',
             'api_version'     => '2',
             'title'           => 'Subjects List',
             'category'        => 'widgets',
             'description'     => 'Display a list of all subjects',
-            'textdomain'      => 'kmac',
+            'textdomain'      => 'acwp',
             'icon'            => 'screenoptions',
-            'editor_script'   => 'kmac-subjects',
+            'editor_script'   => 'acwp-subjects',
             'render_callback' => function ( $attributes ) {
-                $subjects = get_terms( array( 'taxonomy' => 'kmac_subject', ) );
+                $subjects = get_terms( array( 'taxonomy' => 'acwp_subject', ) );
                 $class    = 'nav';
                 $class    .= $attributes['className'] ? ' ' . $attributes['className'] : '';
 
