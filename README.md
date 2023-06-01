@@ -11,6 +11,10 @@ The plugin installs the following post types and taxonomies:
 * Events: ``kmac-event``
   * Event Types: ``kmac-eventtype``
 
+## Blocks
+The plugin installs the following blocks:
+* Subjects List
+
 ## Build plugin from scratch
 ``dotnet build && vi -c ":set nobomb" -c ":wq" obj/Rhetos/Source/WordPress/KMAC/KMAC.php``
 
