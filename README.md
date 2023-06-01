@@ -9,16 +9,16 @@ WordPress website.
 
 The plugin installs the following post types and taxonomies:
 
-* Courses: ``kmac-course``
-    * Subjects: ``kmac-subject``
-* Events: ``kmac-event``
-    * Event Types: ``kmac-eventtype``
+* **Courses**: ``kmac-course``
+    * **Subjects**: ``kmac-subject``
+* **Events**: ``kmac-event``
+    * **Event Types**: ``kmac-eventtype``
 
 ## Blocks
 
 The plugin installs the following blocks:
 
-* Subjects List: ``kmac/subjects``
+* **Subjects List**: ``kmac/subjects``
 
 ## Build plugin from scratch
 
