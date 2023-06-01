@@ -25,7 +25,7 @@ WPPlugin ACWP
         $script = ""((blocks, blockEditor, element) => {
             const el = element.createElement;
             const useBlockProps = blockEditor.useBlockProps;
-            blocks.registerBlockType('wcap/subjects', {
+            blocks.registerBlockType('acwp/subjects', {
                 edit: (props) => {
                     var blockProps = useBlockProps();
                     return el( 'div', blockProps, 'Subjects list' )
@@ -34,20 +34,20 @@ WPPlugin ACWP
             });
         })(window.wp.blocks, window.wp.blockEditor, window.wp.element);"";
 
-        wp_register_script( 'wcap-subjects', '' );
-        wp_add_inline_script( 'wcap-subjects', $script );
+        wp_register_script( 'acwp-subjects', '' );
+        wp_add_inline_script( 'acwp-subjects', $script );
 
-        register_block_type( 'wcap/subjects', array(
+        register_block_type( 'acwp/subjects', array(
             '$schema'         => 'https://schemas.wp.org/trunk/block.json',
             'api_version'     => '2',
             'title'           => 'Subjects List',
             'category'        => 'widgets',
             'description'     => 'Display a list of all subjects',
-            'textdomain'      => 'wcap',
+            'textdomain'      => 'acwp',
             'icon'            => 'screenoptions',
-            'editor_script'   => 'wcap-subjects',
+            'editor_script'   => 'acwp-subjects',
             'render_callback' => function ( $attributes ) {
-                $subjects = get_terms( array( 'taxonomy' => 'wcap_subject', ) );
+                $subjects = get_terms( array( 'taxonomy' => 'acwp_subject', ) );
                 $class    = 'nav';
                 $class    .= $attributes['className'] ? ' ' . $attributes['className'] : '';
 
