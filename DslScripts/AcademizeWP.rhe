@@ -1,7 +1,12 @@
 WPPlugin ACWP
 {
     // Plugin header
-    Name "AcademizeWP";
+    Name        "AcademizeWP";
+    Description "Publish courses and training events on WordPress websites.";
+    PluginURI   "https://github.com/kmeze/AcademizeWP";
+    Version     "1.0.0";
+    Author      "Krešimir Meze";
+    AuthorURI   "https://github.com/kmeze";
 
     // Custom post types
     PostType Courses Course
