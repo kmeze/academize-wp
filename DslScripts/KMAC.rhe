@@ -19,10 +19,10 @@ WPPlugin KMAC
 
     Taxonomy EventTypes EventType;
 
-    // Code
-    Code "
-function kmac_init_subjects_list_block() {
-    $script = ""((blocks, blockEditor, element) => {
+    // Blocks
+    ActionHook 'init' KMAC.RegisterSubjectListBlock;
+    Callback RegisterSubjectListBlock "
+        $script = ""((blocks, blockEditor, element) => {
             const el = element.createElement;
             const useBlockProps = blockEditor.useBlockProps;
             blocks.registerBlockType('kmac/subjects', {
@@ -34,41 +34,38 @@ function kmac_init_subjects_list_block() {
             });
         })(window.wp.blocks, window.wp.blockEditor, window.wp.element);"";
 
-    wp_register_script( 'kmac-subjects', '' );
-    wp_add_inline_script( 'kmac-subjects', $script );
+        wp_register_script( 'kmac-subjects', '' );
+        wp_add_inline_script( 'kmac-subjects', $script );
 
-    register_block_type( 'kmac/subjects', array(
-        '$schema'         => 'https://schemas.wp.org/trunk/block.json',
-        'api_version'     => '2',
-        'title'           => 'Subjects List',
-        'category'        => 'widgets',
-        'description'     => 'Display a list of all subjects',
-        'textdomain'      => 'kmac',
-        'icon'            => 'screenoptions',
-        'editor_script'   => 'kmac-subjects',
-        'render_callback' => function ( $attributes ) {
-            $subjects = get_terms( array( 'taxonomy' => 'kmac_subject', ) );
-            $class    = 'nav';
-            $class    .= $attributes['className'] ? ' ' . $attributes['className'] : '';
+        register_block_type( 'kmac/subjects', array(
+            '$schema'         => 'https://schemas.wp.org/trunk/block.json',
+            'api_version'     => '2',
+            'title'           => 'Subjects List',
+            'category'        => 'widgets',
+            'description'     => 'Display a list of all subjects',
+            'textdomain'      => 'kmac',
+            'icon'            => 'screenoptions',
+            'editor_script'   => 'kmac-subjects',
+            'render_callback' => function ( $attributes ) {
+                $subjects = get_terms( array( 'taxonomy' => 'kmac_subject', ) );
+                $class    = 'nav';
+                $class    .= $attributes['className'] ? ' ' . $attributes['className'] : '';
 
-            ob_start();
-            if ( $subjects ) : ?>
-                <ul class=""<?php esc_attr_e( $class ); ?>"">
-                    <?php foreach ( $subjects as $subject ) : ?>
-                        <li class=""nav-item"">
-                            <a class=""nav-link"" href=""<?php echo esc_url( get_term_link( $subject ) ); ?>"">
-                                <?php esc_html_e( $subject->name ); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif;
+                ob_start();
+                if ( $subjects ) : ?>
+                    <ul class=""<?php esc_attr_e( $class ); ?>"">
+                        <?php foreach ( $subjects as $subject ) : ?>
+                            <li class=""nav-item"">
+                                <a class=""nav-link"" href=""<?php echo esc_url( get_term_link( $subject ) ); ?>"">
+                                    <?php esc_html_e( $subject->name ); ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif;
 
-            return ob_get_clean();
-        },
-    ) );
-}
-
-add_action( 'init', 'kmac_init_subjects_list_block' );
+                return ob_get_clean();
+            },
+        ) );
     ";
 }
