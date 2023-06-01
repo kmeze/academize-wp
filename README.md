@@ -1,7 +1,7 @@
 # KM-Academy WordPress plugin
 
 ## What is KM-Academy
-KM-Academy enables publishing courses and training events on WordPress websites.
+Publish courses and training events on WordPress websites.
 
 ## Post Types and Taxonomies
 The plugin installs the following post types and taxonomies:
