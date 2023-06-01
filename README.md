@@ -3,7 +3,7 @@
 ## What is KM-Academy
 KM-Academy enables publishing courses and training events on WordPress websites.
 
-## Taxonomies and Post Types
+## Post Types and Taxonomies
 The plugin installs the following post types and taxonomies:
 
 * Courses: ``kmac-course``
@@ -13,7 +13,7 @@ The plugin installs the following post types and taxonomies:
 
 ## Blocks
 The plugin installs the following blocks:
-* Subjects List
+* Subjects List: ``kmac/subjects``
 
 ## Build plugin from scratch
 ``dotnet build && vi -c ":set nobomb" -c ":wq" obj/Rhetos/Source/WordPress/KMAC/KMAC.php``
