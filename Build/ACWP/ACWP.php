@@ -132,7 +132,7 @@ function ACWP_RegisterSubjectListBlock( /*CallbackInfo CallbackArg ACWP.Register
             });
         })(window.wp.blocks, window.wp.blockEditor, window.wp.element);";
 
-        wp_register_script( 'acwp-subjects', '' );
+        wp_register_script( 'acwp-subjects', '', array( 'wp-blocks', 'wp-element', 'wp-i18n', 'wp-block-editor' ), '', true );
         wp_add_inline_script( 'acwp-subjects', $script );
 
         register_block_type( 'acwp/subjects', array(
