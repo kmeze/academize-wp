@@ -29,4 +29,4 @@ The plugin installs the following blocks:
 
 ``dotnet build && vi -c ":set nobomb" -c ":wq" obj/Rhetos/Source/WordPress/acwp/acwp.php``
 
-``ln -s ~/Dev/AcademizeWP/Build/acwp/ ~/Dev/wordpress/wp-content/plugins/acwp``
+``ln -s ~/Dev/academize-wp/Build/acwp/ ~/Dev/wordpress/wp-content/plugins/acwp``
